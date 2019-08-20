@@ -1,7 +1,7 @@
 package Main;
 
 public class Main {
-//ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
+
     public static void main(String[] args) {
         Entrada entrada = new Entrada();
         do {
