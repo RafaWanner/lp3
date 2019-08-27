@@ -25,6 +25,17 @@ public class Entrada {
             }
         }
     }
+    
+    public String lerString(String msg) {
+        while (true) {
+            try {
+                String x = JOptionPane.showInputDialog(msg);
+                return x;
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Erro digite um nome valido....");
+            }
+        }
+    }
 
     public boolean continuar(String msg) {
         while (true) {

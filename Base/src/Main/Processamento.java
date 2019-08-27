@@ -27,5 +27,15 @@ public class Processamento {
         }
 
     }
+    
+    public String getInitials(String a) {
+        String a1 = a.trim();
+        String v [] = a1.split(" ");
+        String r = "";
+        for(int i = 0; i < v.length; i++){
+            r += v[i].charAt(0) + " ";
+        }
+        return r;
+    }
 
 }
