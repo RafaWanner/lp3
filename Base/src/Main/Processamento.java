@@ -51,13 +51,43 @@ public class Processamento {
     public String changeChar(String a, char c1, char c2){
         String r = "";
         char v[] = a.toCharArray();
-        for(int i = 0; i< v.length; i++){
+        for(int i = 0; i < v.length; i++){
             if(v[i] == c1)
                 r += c2;
             else
                 r += v[i];
         }
         return r;
+    }
+    
+    public int getUpperCase(String a){
+        int cont = 0;
+        char v[] = a.toCharArray();
+        for(int i = 0; i < v.length; i++){
+            if(Character.isUpperCase(v[i]))
+                cont++;
+        }
+        return cont;
+    }
+    
+    public int getLowerCase(String a){
+        int cont = 0;
+        char v[] = a.toCharArray();
+        for(int i = 0; i < v.length; i++){
+            if(Character.isLowerCase(v[i]))
+                cont++;
+        }
+        return cont;
+    }
+    
+    public int getVowels(String a){
+        int cont = 0;
+        char v[] = a.toLowerCase().toCharArray();
+        for(int i = 0; i < v.length; i++){
+            if(v[i] == 'a' || v[i] == 'e' || v[i] == 'i' || v[i] == 'o' || v[i] == 'u')
+                cont++;
+        }
+        return cont;
     }
 
 }
