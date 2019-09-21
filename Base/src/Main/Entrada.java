@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 public class Entrada {
 
-    public double lerNumeroDouble(String msg) {
+    public double lerDouble(String msg) {
         while (true) {
             try {
                 double x = Double.parseDouble(JOptionPane.showInputDialog(msg));
@@ -15,7 +15,7 @@ public class Entrada {
         }
     }
 
-    public Integer lerNumeroInteiro(String msg) {
+    public Integer lerInt(String msg) {
         while (true) {
             try {
                 int x = Integer.parseInt(JOptionPane.showInputDialog(msg));
@@ -32,7 +32,18 @@ public class Entrada {
                 String x = JOptionPane.showInputDialog(msg);
                 return x;
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "Erro digite um nome valido....");
+                JOptionPane.showMessageDialog(null, "Erro digite uma string valida....");
+            }
+        }
+    }
+    
+    public char lerChar(String msg) {
+        while (true) {
+            try {
+                char x = JOptionPane.showInputDialog(msg).charAt(0);
+                return x;
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Erro digite um char valido....");
             }
         }
     }
@@ -53,7 +64,7 @@ public class Entrada {
                         break;
                 }
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null,"Erro, são válidas as letras S ou N");
+                JOptionPane.showMessageDialog(null,"Erro, sao validas as letras S ou N");
             }
         }
     }
