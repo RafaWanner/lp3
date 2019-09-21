@@ -49,14 +49,7 @@ public class Processamento {
     }
     
     public String changeChar(String a, char c1, char c2){
-        String r = "";
-        char v[] = a.toCharArray();
-        for(int i = 0; i < v.length; i++){
-            if(v[i] == c1)
-                r += c2;
-            else
-                r += v[i];
-        }
+        String r = a.replace(c1, c2);
         return r;
     }
     
