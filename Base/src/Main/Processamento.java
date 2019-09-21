@@ -38,6 +38,16 @@ public class Processamento {
         return r;
     }
     
+    public Integer getNumChar(String a, String b) {
+    	int r = a.toLowerCase().split(b).length - 1;
+    	return r;
+    }
+    
+    public Integer getBlanks(String a) {
+    	int r = a.split(" ").length - 1;
+    	return r;
+    }
+    
     public int getWords(String a){
         int cont = 1;
         char v[] = a.trim().toCharArray();
