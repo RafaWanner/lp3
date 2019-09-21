@@ -37,5 +37,27 @@ public class Processamento {
         }
         return r;
     }
+    
+    public int getWords(String a){
+        int cont = 1;
+        char v[] = a.trim().toCharArray();
+        for(int i = 0; i < v.length; i++){
+            if(v[i] == ' ' && v[i + 1] != ' ')
+                cont++;
+        }
+        return cont;
+    }
+    
+    public String changeChar(String a, char c1, char c2){
+        String r = "";
+        char v[] = a.toCharArray();
+        for(int i = 0; i< v.length; i++){
+            if(v[i] == c1)
+                r += c2;
+            else
+                r += v[i];
+        }
+        return r;
+    }
 
 }
