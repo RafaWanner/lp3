@@ -135,12 +135,66 @@ public class Processamento {
     	return a1;
     }
     
-    public double[][] getInMatrx(double[][] a){
-    	for(int i = 0; i < a.length; i++) {
-    		for(int j = 0; j < a.length; j++) {
-    			
+    public double[][] getInMatrix(double[][] n){
+    	for(int i = 0; i < n.length; i++) {
+    		for(int j = 0; j < n[0].length; j++) {
+    			double temp = n[i][j];
+    			n[i][j] = -temp;
     		}
     	}
-    	return null;
+    	return n;
+    }
+    
+    public double[][] getTransMatrix(double[][] n){
+    	double[][] temp = new double[n[0].length][n.length];
+    	for(int i = 0; i < n.length; i++) {
+    		for(int j = 0; j < n[0].length; j++) {
+    			temp[j][i] = n[i][j];
+    		}
+    	}
+    	return temp;
+    }
+    
+    public boolean getEqMatrix(double[][] n1, double[][] n2){
+    	boolean r = false;
+    	if(n1.length == n2.length && n1[0].length == n2[0].length) {
+    		for(int i = 0; i < n1.length; i++) {
+    			for(int j = 0; j < n1[0].length; j++) {
+    				if(n1[i][j] == n2[i][j])
+    					r = true;
+    				else
+    					return r;
+    			}
+    		}
+    	}
+    	return r;
+    }
+    
+    public double[][] getPlusMatrix(double[][] n1, double[][] n2){
+    	double[][] temp = new double[n1.length][n2[0].length];
+    	for(int i = 0; i < n1.length; i++) {
+    		for(int j = 0; j < n1[0].length; j++) {
+    			temp[i][j] = n1[i][j] + n2[i][j];
+    		}
+    	}
+    	return temp;
+    }
+    
+    public double[][] getMultMatrix(double[][] n1, double[][] n2){
+    	double[][] temp = new double[n1.length][n2[0].length];
+    	for(int i = 0; i < n1.length; i++) {
+    		for(int j = 0; j < n2[0].length; j++) {
+    			temp[i][j] = 0;
+    		}
+    	}
+    	
+    	for(int i = 0; i < n1.length; i++) {
+    		for(int j = 0; j < n2[0].length; j++) {
+    			for(int k = 0; k < n1[0].length; k++) {
+    				temp[i][j] += n1[i][k] * n2[k][j];
+    			}
+    		}
+    	}
+    	return temp;
     }
 }
