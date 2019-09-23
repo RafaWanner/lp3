@@ -1,5 +1,7 @@
 package Main;
 
+import java.text.DecimalFormat;
+
 import javax.swing.JOptionPane;
 
 public class Entrada {
@@ -13,6 +15,48 @@ public class Entrada {
                 return x;
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Erro digite um double....");
+            }
+        }
+    }
+	
+	public double lerDoubleH(String msg, Double high) {
+        while (true) {
+            try {
+            	double a;
+                double x = Double.parseDouble(JOptionPane.showInputDialog(msg));
+                if(x <= high)
+                	a= 3/0;
+                return x;
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Erro digite um double acima de: " + high);
+            }
+        }
+    }
+	
+	public double lerDoubleL(String msg, Double low) {
+        while (true) {
+            try {
+            	double a;
+                double x = Double.parseDouble(JOptionPane.showInputDialog(msg));
+                if(x >= low)
+                	a= 3/0;
+                return x;
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Erro digite um double abaixo de: " + low);
+            }
+        }
+    }
+	
+	public double lerDoubleHL(String msg, Double high, Double low) {
+        while (true) {
+            try {
+            	double a;
+                double x = Double.parseDouble(JOptionPane.showInputDialog(msg));
+                if(x <= high || x >= low)
+                	a= 3/0;
+                return x;
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Erro digite um double entre: " + high + " e " + low);
             }
         }
     }
