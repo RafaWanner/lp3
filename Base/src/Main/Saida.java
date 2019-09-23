@@ -21,5 +21,21 @@ public class Saida {
 	public void printFiveInt(int n1, int n2, int n3, int n4, int n5, String msg) {
 		JOptionPane.showMessageDialog(null, msg + " : " + n1 + ", " + n2 + ", " + n3 + ", " + n4 + ", " + n5);
 	}
+	
+	public void printMatrix(double[][] n) {
+		String t = "";
+		for (int i = 0; i < n.length; i++) {
+			t += "|";
+			for(int j = 0; j < n[0].length; j++) {
+				t += Double.toString(n[i][j]) + "|";
+			}
+			t += "\n";
+		}
+		JOptionPane.showMessageDialog(null, t);
+	}
+	
+	public void printBoolean(boolean n, String msg) {
+		JOptionPane.showMessageDialog(null, msg + " : " + n);
+	}
 
 }
