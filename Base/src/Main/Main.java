@@ -26,6 +26,11 @@ public class Main {
             saida.printInt(rw, "Numero de Palavras");
             saida.printString(rc);
             */
+        	/* #2 
+        	double a = entrada.lerDoubleHL("Digite um double", -0.01, 100.0);
+        	String r = processamento.getFullNum(a);
+        	saida.printString(r);
+        	*/
         	/* #3
         	String a = entrada.lerString("Digite uma String");
         	int rv = processamento.getVowels(a);
