@@ -117,7 +117,23 @@ public class Entrada {
             for(int i = 0; i < n1; i++) {
             	for(int j = 0; j < n2; j++) {
             		try {
-                    	v[i][j] = Double.parseDouble(JOptionPane.showInputDialog(msg));
+                    	v[i][j] = Double.parseDouble(JOptionPane.showInputDialog(msg + " a" + (i+1) + (j+1)));
+                    } catch (Exception e) {
+                        JOptionPane.showMessageDialog(null, "Erro digite um int....");
+                    }
+            	}
+            }
+            return v;
+        }
+    }
+    
+    public double[][] lerArrayEx(String msg, int l, int c) {
+        while (true) {
+        	double[][] v = new double[l][c];
+            for(int i = 0; i < l; i++) {
+            	for(int j = 0; j < c; j++) {
+            		try {
+                    	v[i][j] = Double.parseDouble(JOptionPane.showInputDialog(msg + " a" + (i+1) + (j+1)));
                     } catch (Exception e) {
                         JOptionPane.showMessageDialog(null, "Erro digite um int....");
                     }
