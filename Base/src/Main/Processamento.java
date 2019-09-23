@@ -1,7 +1,5 @@
 package Main;
 
-import java.text.DecimalFormat;
-
 public class Processamento {
 
     double delta(double a, double b, double c) {
@@ -65,16 +63,37 @@ public class Processamento {
         return r;
     }
     
-    /*
-    public Double getFullNum(double a) {
-    	String[] v1 = {"","um","dois","tres","quatro","cinco", "seis", "sete", "oito", "nove", "dez","onze","doze","treze","catorze","quinze","dezeseis","dezesete","dezoito","dezenove"};
+    public String getFullNum(double a) {
+    	String[] v1 = {"zero","um","dois","tres","quatro","cinco", "seis", "sete", "oito", "nove", "dez","onze","doze","treze","catorze","quinze","dezeseis","dezesete","dezoito","dezenove"};
     	String[] v2 = {"","dez","vinte","trinta","quarenta","cinquenta","sessenta","setenta","oitenta","noventa"};
     	String r = "";
-    	DecimalFormat df = new DecimalFormat("###,##0.00");	
-    	double a1 = Double.parseDouble(df.format(a));
-    	return null;
+    	if (a < 20)
+    		r += v1[(int)a];
+    	else if ((int)a % 10 == 0)	
+    		r += v2[(int)a/10];
+    	else {
+    		r += v2[(int)a / 10];
+    		r += " e ";
+    		r += v1[(int)a % 10];
+    	}
+    	
+    	if(a - (int)a != 0) {
+    		r += " e ";
+    		double a1 =(a - (int)a) * 100;
+    		if (a1 < 20)
+        		r += v1[(int)a1];
+        	else if ((int)a1 % 10 == 0)	
+        		r += v2[(int)a1/10];
+        	else {
+        		r += v2[(int)a1 / 10];
+        		r += " e ";
+        		r += v1[(int)a1 % 10];
+        	}
+    		r += " decimos";
+    	}
+    	
+    	return r;
     }
-    */
     
     public int getUpperCase(String a){
         int cont = 0;
